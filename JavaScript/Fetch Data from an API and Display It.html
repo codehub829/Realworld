@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple JS Fetch Example</title>
+</head>
+<body>
+    <h1>Post Title</h1>
+    <p id="postTitle">Fetching...</p>
+
+    <script>
+        // Fetch data from an API
+        fetch('https://jsonplaceholder.typicode.com/posts/1')
+            .then(response => response.json())
+            .then(data => {
+                // Display the title of the fetched post
+                document.getElementById('postTitle').innerText = data.title;
+            })
+            .catch(error => console.log('Error:', error));
+    </script>
+</body>
+</html>
